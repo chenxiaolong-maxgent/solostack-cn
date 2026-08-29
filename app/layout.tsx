@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     title: 'SoloStack 独立接单工具箱 — 从报价，到回款',
-    description: '6 个免费工具、5 个成品商品、4 项产品化服务，按经营卡点进入最短解决路径。',
+    description: '6 个免费工具、6 个成品商品、4 项产品化服务，按经营卡点进入最短解决路径。',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'SoloStack 独立接单工具箱' }],
   },
   twitter: {
