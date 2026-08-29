@@ -1,6 +1,6 @@
 {
   "name": "solostack-cn",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
@@ -10,7 +10,7 @@
     "build": "vinext build",
     "build:static": "vite build --config vite.static.config.ts",
     "start": "wrangler dev --config dist/server/wrangler.json",
-    "lint": "oxlint",
+    "lint": "oxlint app static vite.config.ts vite.static.config.ts components/ui/button.tsx lib/utils.ts",
     "format": "oxfmt"
   },
   "dependencies": {
