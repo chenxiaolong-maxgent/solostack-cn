@@ -5,7 +5,6 @@ import {
   ArrowRight,
   BadgeDollarSign,
   BarChart3,
-  Blocks,
   Check,
   CircleDollarSign,
   FilePenLine,
@@ -15,6 +14,7 @@ import {
   PackageCheck,
   Radar,
   ReceiptText,
+  Repeat2,
   ShieldCheck,
   Sparkles,
   WalletCards,
@@ -29,14 +29,15 @@ const PROBLEMS = [
   { key: 'scope', label: '客户总加需求', icon: FilePenLine, tool: 'ScopeGuard', note: '把临时需求整理成能确认、能加价的结构化变更单。', href: 'https://chenxiaolong-maxgent.github.io/scopeguard/', action: '免费生成变更单', paid: '三行业变更单模板', price: '¥19', paidHref: 'https://github.com/chenxiaolong-maxgent/scopeguard/issues/1' },
   { key: 'risk', label: '怕遇到烂客户', icon: Radar, tool: '客户雷达 ClientRisk', note: '用 9 个事实信号，提前判断身份、范围、启动款和账期风险。', href: 'https://chenxiaolong-maxgent.github.io/clientrisk/', action: '免费检查客户风险', paid: '客户筛选诊断', price: '¥99', paidHref: 'https://github.com/chenxiaolong-maxgent/clientrisk/issues/1' },
   { key: 'collect', label: '钱收不回来', icon: CircleDollarSign, tool: '催款回声 PayPing', note: '生成提醒、推进、边界通知三步催款序列，支持中英双语。', href: 'https://chenxiaolong-maxgent.github.io/payping/', action: '免费生成催款话术', paid: '个性化催款方案', price: '¥49', paidHref: 'https://github.com/chenxiaolong-maxgent/payping/issues/1' },
+  { key: 'retainer', label: '月费方案不会定', icon: Repeat2, tool: 'RetainerFit', note: '反推月目标营收、时薪底线和客户容量，再生成维护、标准、增长三档月费方案。', href: 'https://chenxiaolong-maxgent.github.io/retainerfit-cn/', action: '免费设计月费方案', paid: '月费方案诊断', price: '¥299', paidHref: 'https://github.com/chenxiaolong-maxgent/retainerfit-cn/issues/new?template=retainer-diagnosis.yml&title=%E7%94%B3%E8%AF%B7%20%E6%9C%88%E8%B4%B9%E6%96%B9%E6%A1%88%E8%AF%8A%E6%96%AD' },
   { key: 'profit', label: '不知道赚没赚', icon: WalletCards, tool: 'ProfitLens PRO', note: '把费率、直接成本、实际工时和免费加需求一起算进去，找出真正赚钱的项目。', href: 'https://chenxiaolong-maxgent.github.io/profitlens-pro-cn/', action: '查看真实表格', paid: '项目利润跟踪表', price: '¥29', paidHref: 'https://github.com/chenxiaolong-maxgent/profitlens-pro-cn/issues/new?template=buy-profitlens.yml&title=%E8%B4%AD%E4%B9%B0%20ProfitLens%20PRO' },
-  { key: 'system', label: '想一套全部搞定', icon: Blocks, tool: 'SoloStack 全部目录', note: '先比较免费工具、成品模板和产品化服务，再按当前阶段选择。', href: '#catalog', action: '浏览全部工具', paid: '接单经营全家桶', price: '¥69', paidHref: 'https://github.com/chenxiaolong-maxgent/freelance-ops-kit/issues/1' },
 ] as const;
 
 const CATALOG: CatalogItem[] = [
   { name: '报价匠 OfferFlow', type: 'free' as const, price: '免费', description: '中英双语报价单生成、本地保存、多币种与 PDF。', href: 'https://chenxiaolong-maxgent.github.io/offerflow/', icon: ReceiptText },
   { name: 'ScopeGuard', type: 'free' as const, price: '免费', description: '把客户临时加需求变成可确认、可加价的变更单。', href: 'https://chenxiaolong-maxgent.github.io/scopeguard/', icon: FilePenLine },
   { name: '报价底线 RateFloor', type: 'free' as const, price: '免费', description: '计算可持续时薪、日费率、项目底价与建议区间。', href: 'https://chenxiaolong-maxgent.github.io/ratefloor/', icon: Gauge },
+  { name: 'RetainerFit', type: 'free' as const, price: '免费', description: '反推目标营收、客户容量与维护、标准、增长三档月费方案。', href: 'https://chenxiaolong-maxgent.github.io/retainerfit-cn/', icon: Repeat2 },
   { name: '客户雷达 ClientRisk', type: 'free' as const, price: '免费', description: '用 9 个事实信号检查客户、付款与范围风险。', href: 'https://chenxiaolong-maxgent.github.io/clientrisk/', icon: Radar },
   { name: '催款回声 PayPing', type: 'free' as const, price: '免费', description: '生成中英双语三步催款序列，支持消息和邮件。', href: 'https://chenxiaolong-maxgent.github.io/payping/', icon: MessageSquareText },
   { name: '报价匠 PRO', type: 'product' as const, price: '¥29', description: '6 个行业的可编辑 Word 报价模板。', href: 'https://github.com/chenxiaolong-maxgent/offerflow/issues/1', icon: FileText },
@@ -47,10 +48,11 @@ const CATALOG: CatalogItem[] = [
   { name: '报价诊断', type: 'service' as const, price: '¥199', description: '报价问题清单、三档结构、客户解释话术与一次修订。', href: 'https://github.com/chenxiaolong-maxgent/ratefloor/issues/1', icon: BadgeDollarSign },
   { name: '客户筛选诊断', type: 'service' as const, price: '¥99', description: '最低接单条件、付款保护与核验或拒绝话术。', href: 'https://github.com/chenxiaolong-maxgent/clientrisk/issues/1', icon: ShieldCheck },
   { name: '个性化催款方案', type: 'service' as const, price: '¥49', description: '7 天推进节奏、3 组定制话术与边界建议。', href: 'https://github.com/chenxiaolong-maxgent/payping/issues/1', icon: CircleDollarSign },
+  { name: '月费方案诊断', type: 'service' as const, price: '¥299', description: '经营诊断、三档月费范围表、变更规则与销售续费话术。', href: 'https://github.com/chenxiaolong-maxgent/retainerfit-cn/issues/new?template=retainer-diagnosis.yml&title=%E7%94%B3%E8%AF%B7%20%E6%9C%88%E8%B4%B9%E6%96%B9%E6%A1%88%E8%AF%8A%E6%96%AD', icon: Repeat2 },
 ];
 
 const FILTERS: { key: 'all' | CatalogType; label: string }[] = [
-  { key: 'all', label: '全部 13 项' },
+  { key: 'all', label: '全部 15 项' },
   { key: 'free', label: '免费工具' },
   { key: 'product', label: '成品商品' },
   { key: 'service', label: '产品化服务' },
@@ -76,7 +78,7 @@ export default function Home() {
 
       <section id="start" className="mx-auto max-w-[1440px] px-5 py-8 lg:px-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[0.93fr_1.07fr] lg:items-end">
-          <div><p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Freelance operating stack</p><h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">别再到处找模板。<br />先说你卡在哪里。</h1><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">从第一次报价到最后一笔回款，按当前问题进入最短解决路径。所有免费工具无需登录。</p><div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-muted-foreground"><span><strong className="text-foreground">5</strong> 个免费工具</span><span><strong className="text-foreground">5</strong> 个成品商品</span><span><strong className="text-foreground">3</strong> 项产品化服务</span></div></div>
+          <div><p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Freelance operating stack</p><h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">别再到处找模板。<br />先说你卡在哪里。</h1><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">从第一次报价到最后一笔回款，按当前问题进入最短解决路径。所有免费工具无需登录。</p><div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-muted-foreground"><span><strong className="text-foreground">6</strong> 个免费工具</span><span><strong className="text-foreground">5</strong> 个成品商品</span><span><strong className="text-foreground">4</strong> 项产品化服务</span></div></div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {PROBLEMS.map((problem, index) => { const Icon = problem.icon; return <button type="button" key={problem.key} onClick={() => setSelected(index)} className={`flex min-h-24 flex-col justify-between rounded-2xl border p-4 text-left transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${selected === index ? 'border-primary bg-primary text-primary-foreground shadow-lg' : 'border-border bg-card hover:-translate-y-0.5 hover:border-primary/35'}`}><Icon className="size-4" /><span className="mt-5 text-sm font-semibold">{problem.label}</span></button>; })}
           </div>

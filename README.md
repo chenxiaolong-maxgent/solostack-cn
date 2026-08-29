@@ -1,12 +1,12 @@
 # SoloStack 独立接单工具箱
 
-把报价、需求变更、客户风险、催款、回款管理和经营系统汇总到一个统一入口。访客先选择当前卡点，再进入最短免费或付费解决路径。
+把报价、月费方案、需求变更、客户风险、催款、利润和经营系统汇总到一个统一入口。访客先选择当前卡点，再进入最短免费或付费解决路径。
 
 ## 统一目录
 
-- 5 个免费工具：OfferFlow、ScopeGuard、RateFloor、ClientRisk、PayPing
+- 6 个免费工具：OfferFlow、ScopeGuard、RateFloor、RetainerFit、ClientRisk、PayPing
 - 5 个成品商品：报价匠 PRO、ScopeGuard PRO、ProfitLens PRO、CashRadar PRO、接单经营全家桶
-- 3 项产品化服务：报价诊断、客户筛选诊断、个性化催款方案
+- 4 项产品化服务：报价诊断、客户筛选诊断、个性化催款方案、月费方案诊断
 
 ## 收益设计
 
