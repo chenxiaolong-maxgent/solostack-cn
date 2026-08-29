@@ -6,6 +6,7 @@ import {
   BadgeCheck,
   BadgeDollarSign,
   BarChart3,
+  CalendarRange,
   Check,
   CircleDollarSign,
   ClipboardCheck,
@@ -33,6 +34,7 @@ type CatalogItem = { name: string; type: CatalogType; price: string; description
 
 const PROBLEMS = [
   { key: 'brief', label: '报价前没问清', icon: ScanSearch, tool: '问需 BriefPilot', note: '把模糊期待整理成访谈议程、优先问题、风险提醒、会议纪要和可确认的需求基线。', href: 'https://chenxiaolong-maxgent.github.io/briefpilot-cn/', action: '免费生成访谈包', paid: '访谈方案定制', price: '¥99 起', paidHref: 'https://github.com/chenxiaolong-maxgent/briefpilot-cn/issues/new?template=discovery-service.yml' },
+  { key: 'capacity', label: '项目一多就超载', icon: CalendarRange, tool: '排期眼 CapacityFlow', note: '把已有排期和新机会放进同一张四周负载地图，看清超载周、剩余产能和安全开工窗口。', href: 'https://chenxiaolong-maxgent.github.io/capacityflow-cn/', action: '免费计算四周产能', paid: '项目产能系统配置', price: '¥99 起', paidHref: 'https://github.com/chenxiaolong-maxgent/capacityflow-cn/issues/new?template=capacity-setup-service.yml' },
   { key: 'price', label: '不会报价', icon: BadgeDollarSign, tool: '报价底线 RateFloor', note: '先算出可持续时薪、日费率和项目底价，再决定报多少。', href: 'https://chenxiaolong-maxgent.github.io/ratefloor/', action: '免费算报价底线', paid: '报价诊断', price: '¥199', paidHref: 'https://github.com/chenxiaolong-maxgent/ratefloor/issues/1' },
   { key: 'scope', label: '客户总加需求', icon: FilePenLine, tool: 'ScopeGuard', note: '把临时需求整理成能确认、能加价的结构化变更单。', href: 'https://chenxiaolong-maxgent.github.io/scopeguard/', action: '免费生成变更单', paid: '三行业变更单模板', price: '¥19', paidHref: 'https://github.com/chenxiaolong-maxgent/scopeguard/issues/1' },
   { key: 'kickoff', label: '开工前一团乱', icon: ClipboardCheck, tool: 'KickoffFlow', note: '把资料、账号、启动会议、角色权限和首周动作一次对齐，减少开工后的反复追问。', href: 'https://chenxiaolong-maxgent.github.io/kickoffflow-cn/', action: '免费生成启动包', paid: '项目启动包定制', price: '¥99', paidHref: 'https://github.com/chenxiaolong-maxgent/kickoffflow-cn/issues/new?template=kickoff-pack-service.yml&title=%E7%94%B3%E8%AF%B7%20%E9%A1%B9%E7%9B%AE%E5%90%AF%E5%8A%A8%E5%8C%85%E5%AE%9A%E5%88%B6' },
@@ -49,6 +51,7 @@ const PROBLEMS = [
 
 const CATALOG: CatalogItem[] = [
   { name: '问需 BriefPilot', type: 'free' as const, price: '免费', description: '生成需求访谈议程、问题、会前消息、风险提醒、会议纪要与需求确认。', href: 'https://chenxiaolong-maxgent.github.io/briefpilot-cn/', icon: ScanSearch },
+  { name: '排期眼 CapacityFlow', type: 'free' as const, price: '免费', description: '计算未来四周负载、超载工时、剩余产能与新项目安全窗口。', href: 'https://chenxiaolong-maxgent.github.io/capacityflow-cn/', icon: CalendarRange },
   { name: '报价匠 OfferFlow', type: 'free' as const, price: '免费', description: '中英双语报价单生成、本地保存、多币种与 PDF。', href: 'https://chenxiaolong-maxgent.github.io/offerflow/', icon: ReceiptText },
   { name: 'ScopeGuard', type: 'free' as const, price: '免费', description: '把客户临时加需求变成可确认、可加价的变更单。', href: 'https://chenxiaolong-maxgent.github.io/scopeguard/', icon: FilePenLine },
   { name: 'KickoffFlow', type: 'free' as const, price: '免费', description: '生成启动会议、资料与权限清单、角色分工和首周推进计划。', href: 'https://chenxiaolong-maxgent.github.io/kickoffflow-cn/', icon: ClipboardCheck },
@@ -62,6 +65,7 @@ const CATALOG: CatalogItem[] = [
   { name: 'DealNudge', type: 'free' as const, price: '免费', description: '按客户信号生成有价值、有退出边界的四步报价跟进话术。', href: 'https://chenxiaolong-maxgent.github.io/dealnudge-cn/', icon: Send },
   { name: 'ProofLoop', type: 'free' as const, price: '免费', description: '生成客户评价、案例访谈或转介绍三步请求，并记录公开授权。', href: 'https://chenxiaolong-maxgent.github.io/proofloop-cn/', icon: MessageSquareQuote },
   { name: 'BriefPilot PRO', type: 'product' as const, price: '¥29', description: '3 份 Word 会前问卷、需求访谈、会议纪要、需求基线与方案交接模板。', href: 'https://github.com/chenxiaolong-maxgent/briefpilot-cn/issues/new?template=buy-briefpilot-pro.yml', icon: ScanSearch },
+  { name: 'CapacityFlow PRO', type: 'product' as const, price: '¥29', description: '6 张 Excel 工作表，把项目、任务和 13 周滚动容量放进同一套系统。', href: 'https://github.com/chenxiaolong-maxgent/capacityflow-cn/issues/new?template=buy-capacityflow-pro.yml', icon: CalendarRange },
   { name: '报价匠 PRO', type: 'product' as const, price: '¥29', description: '6 个行业的可编辑 Word 报价模板。', href: 'https://github.com/chenxiaolong-maxgent/offerflow/issues/1', icon: FileText },
   { name: 'ScopeGuard PRO', type: 'product' as const, price: '¥19', description: '设计、网站、顾问三行业需求变更单模板。', href: 'https://github.com/chenxiaolong-maxgent/scopeguard/issues/1', icon: FilePenLine },
   { name: 'KickoffFlow PRO', type: 'product' as const, price: '¥29', description: '3 份 Word 客户启动、资料、会议、角色权限与首周推进模板。', href: 'https://github.com/chenxiaolong-maxgent/kickoffflow-cn/issues/new?template=buy-kickoffflow-pro.yml&title=%E8%B4%AD%E4%B9%B0%20KickoffFlow%20PRO', icon: ClipboardCheck },
@@ -72,8 +76,9 @@ const CATALOG: CatalogItem[] = [
   { name: 'CashRadar PRO', type: 'product' as const, price: '¥29', description: 'Excel 回款仪表盘、应收台账与 12 套催款话术。', href: 'https://github.com/chenxiaolong-maxgent/offerflow/issues/2', icon: BarChart3 },
   { name: 'RetainerFit PRO', type: 'product' as const, price: '¥39', description: '3 份 Word 月费提案、范围管理、复盘与续费沟通模板。', href: 'https://github.com/chenxiaolong-maxgent/retainerfit-cn/issues/new?template=buy-retainerfit-pro.yml&title=%E8%B4%AD%E4%B9%B0%20RetainerFit%20PRO', icon: Repeat2 },
   { name: 'ProofLoop PRO', type: 'product' as const, price: '¥29', description: '3 份 Word 客户评价、案例访谈、转介绍与授权模板。', href: 'https://github.com/chenxiaolong-maxgent/proofloop-cn/issues/new?template=buy-proofloop-pro.yml&title=%E8%B4%AD%E4%B9%B0%20ProofLoop%20PRO', icon: MessageSquareQuote },
-  { name: '接单经营全家桶', type: 'product' as const, price: '¥69', description: '30 份 Word、2 套 Excel 与完整项目经营工作流。', href: 'https://github.com/chenxiaolong-maxgent/freelance-ops-kit/issues/1', icon: PackageCheck, featured: true },
+  { name: '接单经营全家桶', type: 'product' as const, price: '¥69', description: '30 份 Word、3 套 Excel 与完整项目经营工作流。', href: 'https://github.com/chenxiaolong-maxgent/freelance-ops-kit/issues/1', icon: PackageCheck, featured: true },
   { name: '客户访谈方案定制', type: 'service' as const, price: '¥99 起', description: '按行业、客单价和流程定制问题树、风险追问、纪要结构与确认话术。', href: 'https://github.com/chenxiaolong-maxgent/briefpilot-cn/issues/new?template=discovery-service.yml', icon: ScanSearch },
+  { name: '项目产能系统配置', type: 'service' as const, price: '¥99 起', description: '按项目类型配置容量口径、阶段、任务分类、预警阈值与启动示例。', href: 'https://github.com/chenxiaolong-maxgent/capacityflow-cn/issues/new?template=capacity-setup-service.yml', icon: CalendarRange },
   { name: '报价诊断', type: 'service' as const, price: '¥199', description: '报价问题清单、三档结构、客户解释话术与一次修订。', href: 'https://github.com/chenxiaolong-maxgent/ratefloor/issues/1', icon: BadgeDollarSign },
   { name: '客户筛选诊断', type: 'service' as const, price: '¥99', description: '最低接单条件、付款保护与核验或拒绝话术。', href: 'https://github.com/chenxiaolong-maxgent/clientrisk/issues/1', icon: ShieldCheck },
   { name: '个性化催款方案', type: 'service' as const, price: '¥49', description: '7 天推进节奏、3 组定制话术与边界建议。', href: 'https://github.com/chenxiaolong-maxgent/payping/issues/1', icon: CircleDollarSign },
@@ -86,7 +91,7 @@ const CATALOG: CatalogItem[] = [
 ];
 
 const FILTERS: { key: 'all' | CatalogType; label: string }[] = [
-  { key: 'all', label: '全部 35 项' },
+  { key: 'all', label: '全部 38 项' },
   { key: 'free', label: '免费工具' },
   { key: 'product', label: '成品商品' },
   { key: 'service', label: '产品化服务' },
@@ -112,7 +117,7 @@ export default function Home() {
 
       <section id="start" className="mx-auto max-w-[1440px] px-5 py-8 lg:px-8 lg:py-12">
         <div className="grid gap-8 lg:grid-cols-[0.93fr_1.07fr] lg:items-end">
-          <div><p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Freelance operating stack</p><h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">别再到处找模板。<br />先说你卡在哪里。</h1><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">从第一次需求访谈、报价、客户启动、反馈改稿、进度汇报到正式验收、回款与客户口碑，按当前问题进入最短解决路径。所有免费工具无需登录。</p><div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-muted-foreground"><span><strong className="text-foreground">13</strong> 个免费工具</span><span><strong className="text-foreground">12</strong> 个成品商品</span><span><strong className="text-foreground">10</strong> 项产品化服务</span></div></div>
+          <div><p className="mb-3 text-xs font-bold uppercase tracking-[0.2em] text-primary">Freelance operating stack</p><h1 className="max-w-3xl text-4xl font-semibold tracking-[-0.055em] sm:text-6xl">别再到处找模板。<br />先说你卡在哪里。</h1><p className="mt-5 max-w-xl text-base leading-7 text-muted-foreground">从第一次需求访谈、产能排期、报价、客户启动、反馈改稿、进度汇报到正式验收、回款与客户口碑，按当前问题进入最短解决路径。所有免费工具无需登录。</p><div className="mt-6 flex flex-wrap gap-4 text-xs font-semibold text-muted-foreground"><span><strong className="text-foreground">14</strong> 个免费工具</span><span><strong className="text-foreground">13</strong> 个成品商品</span><span><strong className="text-foreground">11</strong> 项产品化服务</span></div></div>
           <div className="grid grid-cols-2 gap-2 sm:grid-cols-3">
             {PROBLEMS.map((problem, index) => { const Icon = problem.icon; return <button type="button" key={problem.key} onClick={() => setSelected(index)} className={`flex min-h-24 flex-col justify-between rounded-2xl border p-4 text-left transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary ${selected === index ? 'border-primary bg-primary text-primary-foreground shadow-lg' : 'border-border bg-card hover:-translate-y-0.5 hover:border-primary/35'}`}><Icon className="size-4" /><span className="mt-5 text-sm font-semibold">{problem.label}</span></button>; })}
           </div>
@@ -130,7 +135,7 @@ export default function Home() {
       <section className="border-y border-border bg-[#ebe9dc] px-5 py-16 lg:px-8 lg:py-20">
         <div className="mx-auto grid max-w-[1200px] items-center gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div aria-hidden="true" style={{ backgroundImage: "url('og.png')" }} className="aspect-[1200/630] rounded-[28px] bg-[#20213a] bg-cover bg-center shadow-[0_28px_70px_rgba(32,33,58,0.16)]" />
-          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">One operating path</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">免费解决眼前问题，系统解决反复问题。</h2><p className="mt-5 text-base leading-7 text-muted-foreground">只遇到一次卡点，先用免费工具；如果同类问题反复发生，直接使用成品模板或完整经营系统。没有订阅，也不需要先买才能试。</p><div className="mt-7 grid gap-3 sm:grid-cols-2">{['先问需求，再做方案', '先算底线，再发报价', '先对齐启动，再开始交付', '先收口反馈，再开始改稿', '先发周报，再等客户追', '先写范围，再接受变更', '先写验收，再关闭项目', '先收尾款，再问口碑'].map((item) => <div key={item} className="flex items-center gap-2 text-sm font-medium"><Check className="size-4 text-primary" />{item}</div>)}</div></div>
+          <div><p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">One operating path</p><h2 className="mt-3 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">免费解决眼前问题，系统解决反复问题。</h2><p className="mt-5 text-base leading-7 text-muted-foreground">只遇到一次卡点，先用免费工具；如果同类问题反复发生，直接使用成品模板或完整经营系统。没有订阅，也不需要先买才能试。</p><div className="mt-7 grid gap-3 sm:grid-cols-2">{['先问需求，再做方案', '先看容量，再承诺开工', '先算底线，再发报价', '先对齐启动，再开始交付', '先收口反馈，再开始改稿', '先发周报，再等客户追', '先写范围，再接受变更', '先写验收，再关闭项目', '先收尾款，再问口碑'].map((item) => <div key={item} className="flex items-center gap-2 text-sm font-medium"><Check className="size-4 text-primary" />{item}</div>)}</div></div>
         </div>
       </section>
 
@@ -143,7 +148,7 @@ export default function Home() {
       </section>
 
       <section className="px-5 pb-16 lg:px-8 lg:pb-20">
-        <div className="mx-auto max-w-[1280px] rounded-[32px] bg-primary p-7 text-primary-foreground sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10"><div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/65">Best value</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">不想自己拼？¥69 一套直接开始。</h2><p className="mt-3 text-sm leading-6 text-primary-foreground/75">包含 30 份 Word 模板、完整 Excel 利润与回款系统、需求访谈、客户启动、反馈改稿、进度汇报、交付验收、催款与口碑话术、项目经营工作流和 7 天落地清单。11 个商品单买合计 ¥319。</p></div><a href="https://github.com/chenxiaolong-maxgent/freelance-ops-kit/issues/1" target="_blank" rel="noreferrer" className="mt-6 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#f1e45e] px-5 text-sm font-semibold text-[#20213a] transition hover:bg-[#fff587] lg:mt-0">登记全家桶早鸟价 <ArrowRight className="size-4" /></a></div>
+        <div className="mx-auto max-w-[1280px] rounded-[32px] bg-primary p-7 text-primary-foreground sm:p-10 lg:flex lg:items-center lg:justify-between lg:gap-10"><div className="max-w-2xl"><p className="text-xs font-bold uppercase tracking-[0.18em] text-primary-foreground/65">Best value</p><h2 className="mt-3 text-3xl font-semibold tracking-tight">不想自己拼？¥69 一套直接开始。</h2><p className="mt-3 text-sm leading-6 text-primary-foreground/75">包含 30 份 Word 模板、完整 Excel 产能、利润与回款系统、需求访谈、客户启动、反馈改稿、进度汇报、交付验收、催款与口碑话术、项目经营工作流和 7 天落地清单。12 个商品单买合计 ¥348。</p></div><a href="https://github.com/chenxiaolong-maxgent/freelance-ops-kit/issues/1" target="_blank" rel="noreferrer" className="mt-6 inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-xl bg-[#f1e45e] px-5 text-sm font-semibold text-[#20213a] transition hover:bg-[#fff587] lg:mt-0">登记全家桶早鸟价 <ArrowRight className="size-4" /></a></div>
       </section>
 
       <footer className="border-t border-border px-5 py-8 text-center text-xs leading-5 text-muted-foreground">SoloStack 独立接单工具箱 · 所有免费工具无需登录 · 付费登记不自动扣款</footer>
