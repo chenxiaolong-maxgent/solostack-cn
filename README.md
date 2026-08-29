@@ -5,7 +5,7 @@
 ## 统一目录
 
 - 5 个免费工具：OfferFlow、ScopeGuard、RateFloor、ClientRisk、PayPing
-- 4 个成品商品：报价匠 PRO、ScopeGuard PRO、CashRadar PRO、接单经营全家桶
+- 5 个成品商品：报价匠 PRO、ScopeGuard PRO、ProfitLens PRO、CashRadar PRO、接单经营全家桶
 - 3 项产品化服务：报价诊断、客户筛选诊断、个性化催款方案
 
 ## 收益设计
