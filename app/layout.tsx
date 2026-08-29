@@ -14,13 +14,13 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'SoloStack 独立接单工具箱 — 从报价到回款与口碑',
-  description: '按当前卡点进入最短解决路径：报价、跟进、客户启动、月费、范围、客户风险、催款、利润、客户口碑与完整经营系统。',
+  description: '按当前卡点进入最短解决路径：报价、跟进、客户启动、月费、范围、客户风险、交付验收、催款、利润、客户口碑与完整经营系统。',
   metadataBase: new URL('https://chenxiaolong-maxgent.github.io/solostack-cn/'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     title: 'SoloStack 独立接单工具箱 — 从报价，到回款与口碑',
-    description: '9 个免费工具、8 个成品商品、6 项产品化服务，按经营卡点进入最短解决路径。',
+    description: '10 个免费工具、9 个成品商品、7 项产品化服务，按经营卡点进入最短解决路径。',
     images: [{ url: '/og.png', width: 1200, height: 630, alt: 'SoloStack 独立接单工具箱' }],
   },
   twitter: {
